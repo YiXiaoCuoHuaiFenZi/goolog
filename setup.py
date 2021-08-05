@@ -6,7 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 dev_requires = [
     'build==0.5.1',
     'twine>=3.4.2,<4',
-    'pip-tools>=5,<6'
+    'pip-tools>=5,<6',
+    'pytest>=6.2.4,<6.3'
 ]
 
 setuptools.setup(
