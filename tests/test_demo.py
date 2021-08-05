@@ -1,2 +1,2 @@
-def test_is_cells_true(monkeypatch):
+def test_demo(monkeypatch):
     assert 'a' == "a"
