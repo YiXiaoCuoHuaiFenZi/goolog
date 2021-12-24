@@ -14,7 +14,7 @@ class Colors(object):
     SUCCESS_COLOR = "82"
     WARNING_COLOR = "185"
     ERROR_COLOR = "196"
-    FATAL_COLOR = "88"
+    FATAL_COLOR = "207"
 
 
 def get_time():
@@ -22,7 +22,7 @@ def get_time():
 
 
 def info(msg):
-    sys.stdout.write(f'>>[I] {get_time()}: {msg}' + u"\u001b[0m" + "\n")
+    sys.stdout.write(f'>>[I] {get_time()}: {msg}\n')
 
 
 def suc(msg):
@@ -39,3 +39,5 @@ def err(msg):
 
 def fatal(msg):
     sys.stdout.write(f'>>[F] {get_time()}:' + u"\u001b[38;5;" + Colors.FATAL_COLOR + "m " + msg + u"\u001b[0m" + "\n")
+
+_show_colors()
