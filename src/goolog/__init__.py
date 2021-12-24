@@ -1,20 +1,20 @@
+import sys
 from datetime import datetime
 
 
-class ConsoleColors(object):
-    SUCCESS_COLOR = '\033[32m'
-    WARNING_COLOR = '\033[93m'
-    ERROR_COLOR = '\033[31m'
-    FATAL_COLOR = '\033[91m'
-    END_COLOR = '\033[0m'
+def _show_colors():
+    for i in range(0, 16):
+        for j in range(0, 16):
+            code = str(i * 16 + j)
+            sys.stdout.write(u"\u001b[38;5;" + code + "m " + code.ljust(4))
+    print(u"\u001b[0m")  # clear and new line
 
-    def disable(self):
-        self.HEADER = ''
-        self.OKBLUE = ''
-        self.OKGREEN = ''
-        self.WARNING = ''
-        self.FAIL = ''
-        self.ENDC = ''
+
+class Colors(object):
+    SUCCESS_COLOR = "82"
+    WARNING_COLOR = "185"
+    ERROR_COLOR = "196"
+    FATAL_COLOR = "88"
 
 
 def get_time():
@@ -22,20 +22,20 @@ def get_time():
 
 
 def info(msg):
-    print(f'>> {get_time()}: {msg}')
+    sys.stdout.write(f'>>[I] {get_time()}: {msg}' + u"\u001b[0m" + "\n")
 
 
 def suc(msg):
-    print(f'>> {get_time()}: {ConsoleColors.SUCCESS_COLOR}{msg}{ConsoleColors.END_COLOR}')
+    sys.stdout.write(f'>>[S] {get_time()}:' + u"\u001b[38;5;" + Colors.SUCCESS_COLOR + "m " + msg + u"\u001b[0m" + "\n")
 
 
 def warn(msg):
-    print(f'>> {get_time()}: {ConsoleColors.WARNING_COLOR}{msg}{ConsoleColors.END_COLOR}')
+    sys.stdout.write(f'>>[W] {get_time()}:' + u"\u001b[38;5;" + Colors.WARNING_COLOR + "m " + msg + u"\u001b[0m" + "\n")
 
 
 def err(msg):
-    print(f'>> {get_time()}: {ConsoleColors.ERROR_COLOR}{msg}{ConsoleColors.END_COLOR}')
+    sys.stdout.write(f'>>[E] {get_time()}:' + u"\u001b[38;5;" + Colors.ERROR_COLOR + "m " + msg + u"\u001b[0m" + "\n")
 
 
 def fatal(msg):
-    print(f'>> {get_time()}: {ConsoleColors.FATAL_COLOR}{msg}{ConsoleColors.END_COLOR}')
+    sys.stdout.write(f'>>[F] {get_time()}:' + u"\u001b[38;5;" + Colors.FATAL_COLOR + "m " + msg + u"\u001b[0m" + "\n")
