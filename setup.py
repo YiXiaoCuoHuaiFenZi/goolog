@@ -12,7 +12,7 @@ dev_requires = [
 
 setuptools.setup(
     name="goolog",
-    version="0.0.2",
+    version="0.0.3",
     author="YiXiaoCuoHuaiFenZi",
     author_email="249664317@qq.com",
     description="colorful printer",
