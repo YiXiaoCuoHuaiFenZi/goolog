@@ -11,4 +11,4 @@ warn("This is a warning message")
 err("This is a error message")
 fatal("This is a fatal error message")
 ```
-![demo.png](https://github.com/YiXiaoCuoHuaiFenZi/goolog/blob/main/output/demo.png)
+![demo.png](https://raw.githubusercontent.com/YiXiaoCuoHuaiFenZi/goolog/main/output/demo.png)
